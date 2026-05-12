@@ -732,7 +732,7 @@ function ConsultingPage() {
               目標導向、結果計費的陪跑與諮詢服務，致力於交付成果。
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-9 text-[#6F6962]">
-              如果你卡在 PM 職涯、履歷面試、產品方向，或 side project 的早期判斷，我可以用資深產品經理的方式，幫你把問題轉成可執行的策略與行動方案。
+              如果你卡在 PM 職涯、履歷面試、產品方向，或 side project 的早期判斷，我可以用資深產品經理的方式，<strong>幫你把問題轉成可執行的策略與行動方案</strong>。
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button href={facebookUrl}>
@@ -784,17 +784,18 @@ function ConsultingPage() {
           <ArticleCard
             icon={RouteIcon}
             title="PM 陪跑"
-            desc="我有 5 年軟體產品經理經驗，橫跨 AI、FinTech、AdTech、E-Commerce 與其他 B2C 平台，待過不到 10 人的新創公司，也待過超過 2000 人的大型上市櫃公司。透過目標導向的能力成長與跳槽方法，薪資在五年內翻了三倍，並且系統化成可複製的方法論。"
+            desc={
+              <>
+                我有 <strong>5 年軟體產品經理經驗</strong>，橫跨 AI、FinTech、AdTech、E-Commerce 與其他 B2C 平台，待過不到 10 人的新創公司，也待過超過 2000 人的大型上市櫃公司。透過目標導向的能力成長與跳槽方法，<strong>薪資在五年內翻了三倍</strong>，並且系統化成可複製的方法論。
+              </>
+            }
           />
           <ArticleCard
             icon={Layers}
             title="產品諮詢"
             desc={
               <>
-                五年經驗資深產品經理，專精產品策略與交付商業結果。做過產品從 0 到 1、PMF 探索、AI 降本增效、轉換率優化、內部系統與 revenue-driving product。代表性的經驗包括：主導公司 AI / RPA 導入，拆解並重建營運流程，平均降低單項任務 50–80% 的人工處理成本；從 0 到 1 規劃產品並推出市場，帶動產品線一年內達成 10x 營收成長。
-                <br />
-                <br />
-                產品諮詢想提供的，不是漂亮但落不了地的簡報，而是一個能把問題拆成策略、優先級與下一步行動的外部 PM 視角。
+                <strong>5 年經驗資深產品經理，專精產品策略與交付商業結果</strong>。做過產品從 0 到 1、PMF 探索、AI 降本增效、轉換率優化、內部系統與 revenue-driving product。代表性的經驗包括：主導公司 AI / RPA 導入，拆解並重建營運流程，平均降低單項任務 50–80% 的人工處理成本；從 0 到 1 規劃產品並推出市場，帶動產品線一年內達成 10x 營收成長。
               </>
             }
           />
@@ -811,7 +812,7 @@ function ConsultingPage() {
           title="PM 陪跑"
           subtitle="給想轉 PM、剛入門 PM，或想從初階往下一階段前進的人。"
           noteTitle="不是一次性諮詢"
-          desc="這不是傳統「幾小時諮詢、講完就結束」的模式。我會更接近 mentor 的角色：先和你對齊目標，再拆出策略計畫，接著在合作期間陪你執行、討論與修正，直到你真的推進到目標。"
+          desc="這不是傳統「幾小時諮詢、講完就結束」的模式。我會更接近 mentor 的角色：先和你對齊目標，再拆出策略計畫，接著在合作期間陪你執行、討論與修正，直到你真的達成目標。"
           problems={pmProblems}
           steps={[
             ["職涯 / 求職策略計畫", "不是只改履歷，而是先釐清你的目標職缺、能力缺口、求職定位與行動順序。"],
@@ -824,12 +825,12 @@ function ConsultingPage() {
           title="產品諮詢"
           subtitle="給公司、產品團隊、創業者或 side project builder。"
           noteTitle="不是一次性顧問簡報"
-          desc="這不是傳統「開幾次會、產出一份策略簡報就結束」的模式。我會更接近外部產品夥伴的角色：先和你們對齊目標、限制與成功定義，釐清真正要解的問題，再拆出策略計畫、優先級與下一步行動，並在合作期間持續 review、討論與修正。"
+          desc="這不是傳統「開幾次會、產出一份策略簡報就結束」的模式。我會更接近外部產品夥伴：先對齊目標、限制與成功定義，釐清真正要解的問題，再拆出策略計畫、優先級與下一步行動，並在合作期間持續 review、討論與修正，直到達成目標。"
           problems={productProblems}
           steps={[
             ["產品問題診斷", "協助釐清現在真正卡住的是問題定義、受眾、價值主張、MVP 範圍、GTM，還是執行優先級。"],
             ["策略與優先級建議", "把混亂的產品想法與需求整理成可討論、可取捨、可執行的下一步行動。"],
-            ["文件與決策 review", "可以協助 review PRD、roadmap、MVP scope、GTM 假設、AI workflow 或產品策略文件。"],
+            ["文件與決策 review", "可以協助 review PRD、roadmap、MVP scope、GTM Plan 或產品策略文件。"],
             ["外部 PM 視角", "在團隊內部視角之外，提供一個相對中立、商業與執行導向的產品判斷。"],
           ]}
         />
@@ -859,7 +860,11 @@ function ConsultingPage() {
         <SectionIntro
           label="收費方式"
           title="基本合作費 + 成效費。"
-          desc="我希望合作不是單純按時間收費，而是更接近 goal-driven 的合作。固定合作費不是完整顧問費，而是用來覆蓋持續陪跑、顧問時間與策略投入的基本成本，因此會刻意維持在相對低門檻。成效費則只會在合作前定義的目標真的達成後才收取，代表我也把一部分收入和結果綁在一起。當然，如果問題複雜度不高，也可以先從單次諮詢開始。"
+          desc={
+            <>
+              我希望合作不是單純按時間收費，而是更接近 <strong>goal-driven 的合作</strong>。固定合作費不是完整顧問費，而是用來覆蓋持續陪跑、顧問時間與策略投入的基本成本，因此會刻意維持在相對低門檻。成效費則只會在合作前定義的目標真的達成後才收取，代表我也把一部分收入和結果綁在一起。當然，如果問題複雜度不高，也可以先從單次諮詢開始。
+            </>
+          }
         />
         <div className="mb-5 grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] md:grid-cols-3">
           {pricingLogic.map((item, index) => (
@@ -904,7 +909,7 @@ function ConsultingPage() {
             success="成效費依合作前定義的目標討論，例如取得 PM 面試、成功轉職、拿到 offer、薪資提升等。"
           />
           <PricingCard
-            label="團隊顧問"
+            label="策略夥伴"
             title="產品諮詢"
             fee="每月 NTD 8,000 起"
             note="依合作範圍、問題複雜度、會議頻率與交付內容討論。公司或團隊案會 case by case 評估。"

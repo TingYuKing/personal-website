@@ -17,6 +17,7 @@ import {
   Mail,
   MessageCircle,
   MessageSquare,
+  RefreshCw,
   Route as RouteIcon,
   Search,
   Target,
@@ -522,13 +523,23 @@ function HomePage() {
           </div>
 
           <div className="grid gap-8">
-            <div className="flex flex-wrap gap-2">
-              {["Product Builder", "創作者", "一人事業實驗中"].map((item) => (
-                <span key={item} className="inline-flex items-center gap-2 border border-[#DDD3C7] bg-[#FFFCF7] px-3 py-2 text-xs font-semibold text-[#6F6962]">
-                  <BadgeCheck className="h-3.5 w-3.5 text-[#1F3A35]" strokeWidth={1.8} />
-                  {item}
-                </span>
-              ))}
+            <div className="border border-[#DDD3C7] bg-[#FFFCF7]/90 p-4 sm:p-5">
+              <div className="grid gap-4 sm:grid-cols-3">
+                {["軟體產品經理", "Product Builder", "一人事業實驗中"].map((item, index) => (
+                  <div key={item} className="relative flex items-start gap-3 sm:flex-col sm:items-center sm:text-center">
+                    {index < 2 ? (
+                      <>
+                        <span className="absolute left-4 top-8 h-full w-px bg-[#DDD3C7] sm:left-1/2 sm:top-4 sm:h-px sm:w-full" aria-hidden="true" />
+                        <span className="absolute left-[13px] top-[calc(100%+14px)] h-2 w-2 rotate-45 border-r border-t border-[#8C857D] sm:left-auto sm:right-0 sm:top-[13px]" aria-hidden="true" />
+                      </>
+                    ) : null}
+                    <div className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center border border-[#DDD3C7] bg-[#F7F4EF] text-xs font-bold tracking-[0.12em] text-[#7A2E22]">
+                      0{index + 1}
+                    </div>
+                    <p className="mt-1 text-sm font-semibold leading-6 text-[#1E1D1A] sm:mt-3">{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="space-y-5 text-base leading-8 text-[#4E4A45]">
               <p className="flex items-start gap-3">
@@ -759,6 +770,33 @@ function ConsultingPage() {
           title="有些問題，你需要的是一個外部專業視角，跟你一起動手解決。"
           desc="如果你已經卡在某段職涯、產品或 side project 問題裡很久，與其繼續在自己的思維框架裡原地打轉，不如引入一點專業協助，會節省很多時間。"
         />
+        <div className="mb-8 border border-[#D6CABC] bg-[#EFE8DE] p-3 sm:p-4">
+          <div className="grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] lg:grid-cols-[1fr_auto_1fr]">
+          <div className="bg-[#FFFCF7] p-6 sm:p-7">
+            <p className="text-xs font-bold tracking-[0.16em] text-[#7A2E22]">Before</p>
+            <h3 className="mt-3 font-serif text-2xl font-semibold">卡住的狀態</h3>
+            <div className="mt-5 grid gap-3 text-sm leading-6 text-[#6F6962] sm:grid-cols-2">
+              {["方向不清楚", "問題拆不開", "優先級混亂", "不知道下一步"].map((item) => (
+                <p key={item} className="border-l border-[#DDD3C7] bg-[#F7F4EF]/70 px-3 py-2">{item}</p>
+              ))}
+            </div>
+          </div>
+          <div className="flex items-center justify-center bg-[#F7F4EF] px-5 py-4 text-[#7A2E22] lg:px-5">
+            <div className="flex h-11 w-11 items-center justify-center border border-[#DDD3C7] bg-[#FFFCF7]">
+              <ArrowRight className="h-5 w-5" strokeWidth={1.6} />
+            </div>
+          </div>
+          <div className="bg-[#FFFCF7] p-6 sm:p-7">
+            <p className="text-xs font-bold tracking-[0.16em] text-[#1F3A35]">After</p>
+            <h3 className="mt-3 font-serif text-2xl font-semibold">可行動的狀態</h3>
+            <div className="mt-5 grid gap-3 text-sm leading-6 text-[#6F6962] sm:grid-cols-2">
+              {["釐清問題", "定義目標", "拆出策略", "下一步行動"].map((item) => (
+                <p key={item} className="border-l border-[#1F3A35]/40 bg-[#F7F4EF]/70 px-3 py-2">{item}</p>
+              ))}
+            </div>
+          </div>
+          </div>
+        </div>
         <div className="grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] md:grid-cols-2 lg:grid-cols-4">
           {problemCards.map((card) => (
             <InfoCard key={card.title} title={card.title} desc={card.desc} icon={card.icon} />
@@ -795,7 +833,7 @@ function ConsultingPage() {
             title="產品諮詢"
             desc={
               <>
-                <strong>5 年經驗資深產品經理，專精產品策略與交付商業結果</strong>。做過產品從 0 到 1、PMF 探索、AI 降本增效、轉換率優化、內部系統與 revenue-driving product。代表性的經驗包括：主導公司 AI / RPA 導入，拆解並重建營運流程，平均降低單項任務 50–80% 的人工處理成本；從 0 到 1 規劃產品並推出市場，帶動產品線一年內達成 10x 營收成長。
+                <strong>5 年經驗資深產品經理，專精產品策略與交付商業結果</strong>。做過產品從 0 到 1、PMF 探索、AI 降本增效、轉換率優化、內部系統與 revenue-driving product。代表性的經驗包括：主導公司 AI / RPA 導入，拆解並重建營運流程，<strong>平均降低單項任務 50–80% 的人工處理成本</strong>；從 0 到 1 規劃產品並推出市場，帶動產品線一年內達成 <strong>10x 營收成長</strong>。
               </>
             }
           />
@@ -842,17 +880,29 @@ function ConsultingPage() {
           title="不是提供一次性建議，而是透過持續協作，收穫你想要的結果。"
           desc="無論是 PM 陪跑或產品諮詢，流程都會從定義目標、釐清問題開始，然後規劃策略、制定行動，並依實際回饋持續修正，直到收穫成效。"
         />
-        <div className="grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] md:grid-cols-2 lg:grid-cols-4">
+        <div className="relative">
+          <div className="pointer-events-none absolute left-[12.5%] right-[12.5%] top-12 hidden h-px bg-[#DDD3C7] lg:block" aria-hidden="true" />
+          <div className="grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] md:grid-cols-2 lg:grid-cols-4">
           {processSteps.map((step, index) => (
-            <InfoCard
-              key={step.title}
-              kicker={`0${index + 1}`}
-              title={step.title}
-              desc={step.desc}
-              icon={step.icon}
-              flow={index < processSteps.length - 1}
-            />
+            <article key={step.title} className="relative bg-[#FFFCF7] p-6 sm:p-8">
+              {index < processSteps.length - 1 ? (
+                <span className="absolute right-0 top-12 hidden h-px w-8 translate-x-1/2 bg-[#8C857D] lg:block" aria-hidden="true" />
+              ) : null}
+              <div className="mb-5 flex items-center gap-3">
+                <IconMark icon={step.icon} />
+                <p className="font-serif text-3xl text-[#8C857D]">0{index + 1}</p>
+              </div>
+              <h3 className="font-serif text-2xl font-semibold">{step.title}</h3>
+              <p className="mt-5 leading-8 text-[#6F6962]">{step.desc}</p>
+              {index === 2 ? (
+                <div className="mt-6 inline-flex items-center gap-2 border border-[#DDD3C7] bg-[#F7F4EF] px-3 py-2 text-xs font-semibold text-[#1F3A35]">
+                    <RefreshCw className="h-4 w-4" strokeWidth={1.7} />
+                    持續討論 / review / 修正
+                </div>
+              ) : null}
+            </article>
           ))}
+          </div>
         </div>
       </section>
 
@@ -866,20 +916,38 @@ function ConsultingPage() {
             </>
           }
         />
-        <div className="mb-5 grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] md:grid-cols-3">
-          {pricingLogic.map((item, index) => (
-            <article key={item.title} className="bg-[#FFFCF7] p-4 sm:p-5">
-              <div className="flex items-start gap-3">
-                <IconMark icon={item.icon} className="h-8 w-8" />
-                <div>
-                  <p className="text-sm font-semibold text-[#1E1D1A]">
-                    0{index + 1}. {item.title}
-                  </p>
-                  <p className="mt-1.5 text-sm leading-6 text-[#6F6962]">{item.desc}</p>
+        <div className="mb-5 border border-[#DDD3C7] bg-[#FFFCF7]/90 p-4 sm:p-5">
+          <div className="relative">
+            <div className="absolute left-1/2 top-0 hidden h-6 w-px -translate-x-1/2 bg-[#DDD3C7] md:block" aria-hidden="true" />
+            <div className="absolute left-1/4 right-1/4 top-6 hidden h-px bg-[#DDD3C7] md:block" aria-hidden="true" />
+            <div className="absolute left-1/4 top-6 hidden h-2 w-px -translate-x-1/2 bg-[#DDD3C7] md:block" aria-hidden="true" />
+            <div className="absolute left-3/4 top-6 hidden h-2 w-px -translate-x-1/2 bg-[#DDD3C7] md:block" aria-hidden="true" />
+            <div className="grid gap-4 pt-0 md:grid-cols-2 md:pt-8">
+              <article className="border border-[#DDD3C7] bg-[#F7F4EF] p-4 sm:p-5">
+                <div className="flex items-start gap-3">
+                  <IconMark icon={pricingLogic[0].icon} className="h-8 w-8" />
+                  <div>
+                    <p className="text-sm font-semibold text-[#1E1D1A]">{pricingLogic[0].title}</p>
+                    <p className="mt-1.5 text-sm leading-6 text-[#6F6962]">{pricingLogic[0].desc}</p>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+              <article className="border border-[#DDD3C7] bg-[#F7F4EF] p-4 sm:p-5">
+                <div className="relative space-y-4">
+                  <div className="absolute left-4 top-4 bottom-4 w-px bg-[#DDD3C7]" aria-hidden="true" />
+                  {[pricingLogic[1], pricingLogic[2]].map((item) => (
+                    <div key={item.title} className="flex items-start gap-3">
+                      <IconMark icon={item.icon} className="relative z-10 h-8 w-8" />
+                      <div>
+                        <p className="text-sm font-semibold text-[#1E1D1A]">{item.title}</p>
+                        <p className="mt-1.5 text-sm leading-6 text-[#6F6962]">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
         <div className="grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] md:grid-cols-2 xl:grid-cols-3">
           <PricingCard

@@ -810,7 +810,8 @@ function ConsultingPage() {
         <ServiceBlock
           title="PM 陪跑"
           subtitle="給想轉 PM、剛入門 PM，或想從初階往下一階段前進的人。"
-          desc="這不是傳統「幾小時諮詢、講完就結束」的模式。我會更接近 mentor 的角色：先和你對齊目標，再拆出策略計畫，接著在合作期間陪你執行、討論、修正，直到你真的達成目標。"
+          noteTitle="不是一次性諮詢"
+          desc="這不是傳統「幾小時諮詢、講完就結束」的模式。我會更接近 mentor 的角色：先和你對齊目標，再拆出策略計畫，接著在合作期間陪你執行、討論與修正，直到你真的推進到目標。"
           problems={pmProblems}
           steps={[
             ["職涯 / 求職策略計畫", "不是只改履歷，而是先釐清你的目標職缺、能力缺口、求職定位與行動順序。"],
@@ -822,7 +823,8 @@ function ConsultingPage() {
         <ServiceBlock
           title="產品諮詢"
           subtitle="給公司、產品團隊、創業者或 side project builder。"
-          desc="這不是傳統「開幾次會、產出一份策略簡報就結束」的顧問模式。我會更接近外部產品夥伴的角色：先和你們對齊目標、限制與成功定義，釐清真正要解的問題，再拆出策略計畫、優先級與下一步行動，並在合作期間陪你們持續 review、討論、修正，直到達成預定目標。"
+          noteTitle="不是一次性顧問簡報"
+          desc="這不是傳統「開幾次會、產出一份策略簡報就結束」的模式。我會更接近外部產品夥伴的角色：先和你們對齊目標、限制與成功定義，釐清真正要解的問題，再拆出策略計畫、優先級與下一步行動，並在合作期間持續 review、討論與修正。"
           problems={productProblems}
           steps={[
             ["產品問題診斷", "協助釐清現在真正卡住的是問題定義、受眾、價值主張、MVP 範圍、GTM，還是執行優先級。"],
@@ -859,46 +861,38 @@ function ConsultingPage() {
           title="基本合作費 + 成效費。"
           desc="我希望合作不是單純按時間收費，而是更接近 goal-driven 的合作。固定合作費不是完整顧問費，而是用來覆蓋持續陪跑、顧問時間與策略投入的基本成本，因此會刻意維持在相對低門檻。成效費則只會在合作前定義的目標真的達成後才收取，代表我也把一部分收入和結果綁在一起。當然，如果問題複雜度不高，也可以先從單次諮詢開始。"
         />
-        <div className="mb-6 grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] md:grid-cols-3">
+        <div className="mb-5 grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] md:grid-cols-3">
           {pricingLogic.map((item, index) => (
-            <article key={item.title} className="bg-[#FFFCF7] p-5">
-              <div className="flex items-start gap-4">
-                <IconMark icon={item.icon} />
+            <article key={item.title} className="bg-[#FFFCF7] p-4 sm:p-5">
+              <div className="flex items-start gap-3">
+                <IconMark icon={item.icon} className="h-8 w-8" />
                 <div>
-                  <p className="font-semibold text-[#1E1D1A]">
+                  <p className="text-sm font-semibold text-[#1E1D1A]">
                     0{index + 1}. {item.title}
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-[#6F6962]">{item.desc}</p>
+                  <p className="mt-1.5 text-sm leading-6 text-[#6F6962]">{item.desc}</p>
                 </div>
               </div>
             </article>
           ))}
         </div>
-        <article className="mb-px border border-[#DDD3C7] bg-[#FFFCF7] p-6 sm:p-8">
-          <div className="grid gap-8 lg:grid-cols-[0.72fr_1fr] lg:items-start">
-            <div>
-              <h3 className="font-serif text-3xl font-semibold">單次諮詢 / 問題診斷</h3>
-              <p className="mt-5 font-serif text-2xl text-[#1F3A35]">NTD 2,500 / 次起</p>
-            </div>
-            <div>
-              <p className="leading-8 text-[#6F6962]">
-                適合有一個明確問題，想先聽外部 PM 視角的人。可以用來討論 PM 職涯、履歷面試、產品方向等。
-              </p>
-              <ul className="mt-5 space-y-2 leading-7 text-[#4E4A45]">
-                <li>・60–90 分鐘諮詢</li>
-                <li>・會前簡單背景整理</li>
-                <li>・會後提供重點方向與下一步建議</li>
-              </ul>
-              <p className="mt-5 text-sm leading-7 text-[#6F6962]">
-                適合想先試一次合作方式，或目前只需要單點問題診斷的人。
-              </p>
-            </div>
-          </div>
-        </article>
-        <div className="grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] lg:grid-cols-2">
+        <div className="grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] md:grid-cols-2 xl:grid-cols-3">
           <PricingCard
+            label="低門檻入口"
+            title="單次諮詢 / 問題診斷"
+            fee="NTD 2,500 / 次起"
+            note="適合有一個明確問題，想先聽初步意見的人。可以用來討論 PM 職涯、履歷面試、產品方向等。"
+            includes={[
+              "60–90 分鐘諮詢",
+              "會前簡單背景整理",
+              "會後提供重點方向與下一步建議",
+            ]}
+            success="適合想先試一次合作方式，或目前只需要單點問題診斷的人。"
+          />
+          <PricingCard
+            label="持續陪跑"
             title="PM 陪跑"
-            fee="每月 NTD 3500 起"
+            fee="每月 NTD 3,500 起"
             note="依目標難度、陪跑密度與合作範圍討論。"
             includes={[
               "免費初談",
@@ -910,15 +904,16 @@ function ConsultingPage() {
             success="成效費依合作前定義的目標討論，例如取得 PM 面試、成功轉職、拿到 offer、薪資提升等。"
           />
           <PricingCard
+            label="團隊顧問"
             title="產品諮詢"
-            fee="每月 NTD 8000 起"
+            fee="每月 NTD 8,000 起"
             note="依合作範圍、問題複雜度、會議頻率與交付內容討論。公司或團隊案會 case by case 評估。"
             includes={[
               "免費初談",
               "產品問題診斷",
               "策略計畫與下一步行動建議",
               "每月顧問時間",
-              "文件 review / roadmap / MVP / GTM / AI strategy 討論",
+              "文件、策略、成效檢視與討論",
               "Milestone 達成後才收取成效費",
             ]}
             success="成效費或 milestone fee 依合作前定義的目標討論，例如完成 MVP scope、產品診斷、轉換率改善、作業成本下降、AI workflow 設計等。"
@@ -1044,7 +1039,7 @@ function ArticleCard({ title, desc, icon }) {
   );
 }
 
-function ServiceBlock({ title, subtitle, desc, problems, steps }) {
+function ServiceBlock({ title, subtitle, noteTitle, desc, problems, steps }) {
   return (
     <article className="mb-10 border border-[#DDD3C7] bg-[#FFFCF7] p-6 last:mb-0 sm:p-8">
       <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr]">
@@ -1052,7 +1047,12 @@ function ServiceBlock({ title, subtitle, desc, problems, steps }) {
           <h3 className="font-serif text-4xl font-semibold">{title}</h3>
           <p className="mt-4 font-semibold text-[#1F3A35]">{subtitle}</p>
         </div>
-        <p className="leading-8 text-[#6F6962]">{desc}</p>
+        <div className="border border-[#E7DED3] bg-[#F7F4EF] p-5 sm:p-6">
+          <div className="border-l-2 border-[#1F3A35] pl-4">
+            <p className="text-xs font-bold tracking-[0.16em] text-[#7A2E22]">{noteTitle}</p>
+            <p className="mt-3 leading-8 text-[#6F6962]">{desc}</p>
+          </div>
+        </div>
       </div>
       <div className="mt-8 grid gap-8 lg:grid-cols-2">
         <div>
@@ -1084,19 +1084,22 @@ function ServiceBlock({ title, subtitle, desc, problems, steps }) {
   );
 }
 
-function PricingCard({ title, fee, note, includes, success }) {
+function PricingCard({ label, title, fee, note, includes, success }) {
   return (
-    <article className="bg-[#FFFCF7] p-6 sm:p-8">
-      <h3 className="font-serif text-3xl font-semibold">{title}</h3>
-      <p className="mt-5 font-serif text-2xl text-[#1F3A35]">{fee}</p>
-      <p className="mt-3 text-sm leading-7 text-[#6F6962]">{note}</p>
-      <div className="my-7 h-px bg-[#DDD3C7]" />
+    <article className="h-full bg-[#FFFCF7] p-5 sm:p-6">
+      <div className="xl:min-h-[228px]">
+        <p className="text-xs font-bold tracking-[0.16em] text-[#7A2E22]">{label}</p>
+        <h3 className="mt-3 font-serif text-3xl font-semibold">{title}</h3>
+        <p className="mt-4 font-serif text-2xl text-[#1F3A35]">{fee}</p>
+        <p className="mt-3 text-sm leading-7 text-[#6F6962]">{note}</p>
+      </div>
+      <div className="my-6 h-px bg-[#DDD3C7]" />
       <ul className="space-y-3 leading-7 text-[#4E4A45]">
         {includes.map((item) => (
           <li key={item}>・{item}</li>
         ))}
       </ul>
-      <p className="mt-7 border-l border-[#1F3A35] pl-4 text-sm leading-7 text-[#1F3A35]">{success}</p>
+      <p className="mt-6 border-l border-[#1F3A35] pl-4 text-sm leading-7 text-[#1F3A35]">{success}</p>
     </article>
   );
 }

@@ -836,8 +836,8 @@ function ConsultingPage() {
       <section className="border-b border-[#DDD3C7] py-20">
         <SectionIntro
           label="我的合作方式"
-          title="不是賣時間，而是把問題推進到下一步。"
-          desc="我不希望合作停在一次聊完、各自回家。無論是 PM 陪跑或產品諮詢，流程都會從釐清問題開始，再定義目標、拆出策略，並依實際回饋持續修正。"
+          title="不是提供一次性建議，而是透過持續協作，收穫你想要的結果。"
+          desc="無論是 PM 陪跑或產品諮詢，流程都會從定義目標、釐清問題開始，然後規劃策略、制定行動，並依實際回饋持續修正，直到收穫成效。"
         />
         <div className="grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] md:grid-cols-2 lg:grid-cols-4">
           {processSteps.map((step, index) => (

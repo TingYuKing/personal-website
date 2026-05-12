@@ -216,7 +216,7 @@ const problemCards = [
 const backgroundChips = [
   { label: "5 年資深 PM", icon: BadgeCheck },
   { label: "AI / Product Startegy / Business Growth", icon: TrendingUp },
-  { label: "方法論與實戰兼具", icon: CheckCircle2 },
+  { label: "兼具方法論與實戰經驗", icon: CheckCircle2 },
 ];
 
 const pmProblems = [

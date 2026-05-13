@@ -912,7 +912,7 @@ function ConsultingPage() {
           title="基本合作費 + 成效費。"
           desc={
             <>
-              我希望合作不是單純按時間收費，而是更接近 <strong>goal-driven 的合作</strong>。固定合作費不是完整顧問費，而是用來覆蓋持續陪跑、顧問時間與策略投入的基本成本，因此會刻意維持在相對低門檻。成效費則只會在合作前定義的目標真的達成後才收取，代表我也把一部分收入和結果綁在一起。當然，如果問題複雜度不高，也可以先從單次諮詢開始。
+              我希望合作不是單純按時間收費，而是更接近 <strong>goal-driven 的合作</strong>。固定合作費不是完整顧問費，而是用來覆蓋持續陪跑、顧問時間與策略投入的基本成本，因此會刻意維持在相對低門檻。<strong>成效費則只會在合作前定義的目標真的達成後才收取，代表我也把一部分收入和結果綁在一起</strong>。當然，如果問題複雜度不高，也可以先從單次諮詢開始。
             </>
           }
         />
@@ -953,10 +953,11 @@ function ConsultingPage() {
           <PricingCard
             label="低門檻入口"
             title="單次諮詢 / 問題診斷"
-            fee="NTD 2,500 / 次起"
-            note="適合有一個明確問題，想先聽初步意見的人。可以用來討論 PM 職涯、履歷面試、產品方向等。"
+            fee="NTD 1,500 起"
+            feeType="單次收費"
+            note="適合有一個明確問題，想先輕量討論的人。可以用來討論 PM 職涯、履歷面試、產品方向等。"
             includes={[
-              "60–90 分鐘諮詢",
+              "45–60 分鐘諮詢",
               "會前簡單背景整理",
               "會後提供重點方向與下一步建議",
             ]}
@@ -965,7 +966,8 @@ function ConsultingPage() {
           <PricingCard
             label="持續陪跑"
             title="PM 陪跑"
-            fee="每月 NTD 3,500 起"
+            fee="每月 NTD 2,500 起"
+            feeType="基本費"
             note="依目標難度、陪跑密度與合作範圍討論。"
             includes={[
               "免費初談",
@@ -980,6 +982,7 @@ function ConsultingPage() {
             label="策略夥伴"
             title="產品諮詢"
             fee="每月 NTD 8,000 起"
+            feeType="基本費"
             note="依合作範圍、問題複雜度、會議頻率與交付內容討論。公司或團隊案會 case by case 評估。"
             includes={[
               "免費初談",
@@ -1157,13 +1160,18 @@ function ServiceBlock({ title, subtitle, noteTitle, desc, problems, steps }) {
   );
 }
 
-function PricingCard({ label, title, fee, note, includes, success }) {
+function PricingCard({ label, title, fee, feeType, note, includes, success }) {
   return (
     <article className="h-full bg-[#FFFCF7] p-5 sm:p-6">
       <div className="xl:min-h-[228px]">
         <p className="text-xs font-bold tracking-[0.16em] text-[#7A2E22]">{label}</p>
         <h3 className="mt-3 font-serif text-3xl font-semibold">{title}</h3>
         <p className="mt-4 font-serif text-2xl text-[#1F3A35]">{fee}</p>
+        {feeType ? (
+          <p className="mt-3 inline-flex border border-[#DDD3C7] bg-[#F7F4EF] px-2.5 py-1 text-xs font-semibold tracking-[0.12em] text-[#6F6962]">
+            {feeType}
+          </p>
+        ) : null}
         <p className="mt-3 text-sm leading-7 text-[#6F6962]">{note}</p>
       </div>
       <div className="my-6 h-px bg-[#DDD3C7]" />

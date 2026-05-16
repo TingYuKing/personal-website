@@ -397,7 +397,7 @@ function Footer() {
       <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="font-serif text-2xl font-semibold">鯛魚</p>
-          <p className="mt-2 text-sm text-[#6F6962]">先求方向正確，再開始努力前進。</p>
+          <p className="mt-2 text-sm text-[#6F6962]">選擇，遠比盲目努力重要。</p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm font-semibold text-[#6F6962]">
           {footerLinks.map((item) => (
@@ -475,8 +475,8 @@ function HomePage() {
           </div>
 
           <h1 className="max-w-4xl text-balance font-serif text-[2.45rem] font-semibold leading-[1.16] tracking-[-0.02em] text-[#1E1D1A] sm:text-5xl lg:text-[3.8rem]">
-            <span>先求方向正確，</span>
-            <span className="whitespace-nowrap">再開始努力前進。</span>
+            <span>選擇，</span>
+            <span className="whitespace-nowrap">遠比盲目努力重要。</span>
           </h1>
 
           <div className="mt-7 max-w-2xl space-y-4 text-base leading-8 text-[#6F6962] sm:text-lg">

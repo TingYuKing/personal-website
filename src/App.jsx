@@ -26,7 +26,7 @@ import {
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const okareerUrl = "https://okareer.com/";
-const youtubeUrl = "/#youtube";
+const youtubeUrl = "https://www.youtube.com/@diaoyu-96";
 const externalLinks = {
   facebook: "https://www.facebook.com/profile.php?id=61589038263784",
   medium: "https://medium.com/@intelleyougo",
@@ -80,7 +80,7 @@ const startHere = [
       </>
     ),
     cta: "前往 YouTube",
-    href: "#youtube",
+    href: youtubeUrl,
     priority: "tertiary",
     anchorId: "youtube",
     icon: CirclePlay,

@@ -259,12 +259,12 @@ const processSteps = [
 
 const pricingLogic = [
   {
-    title: "單次諮詢",
-    desc: "適合先從單點問題開始。",
+    title: "Coffee Chat",
+    desc: "輕鬆聊聊你的背景、問題與可能方向。",
     icon: MessageSquare,
   },
   {
-    title: "基本合作費",
+    title: "基本費",
     desc: "覆蓋陪跑、顧問時間與策略投入。",
     icon: Coins,
   },
@@ -740,7 +740,7 @@ function ConsultingPage() {
           <div>
             <SectionLabel>諮詢 / 合作</SectionLabel>
             <h1 className="max-w-4xl font-serif text-4xl font-semibold leading-tight tracking-[-0.02em] sm:text-6xl">
-              目標導向、結果計費的陪跑與諮詢服務，致力於交付成果。
+              結果計費的策略陪跑，陪你從問題到成果。
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-9 text-[#6F6962]">
               如果你卡在 PM 職涯、履歷面試、產品方向，或 side project 的早期判斷，我可以用資深產品經理的方式，<strong>幫你把問題轉成可執行的策略與行動方案</strong>。
@@ -912,10 +912,22 @@ function ConsultingPage() {
           title="基本合作費 + 成效費。"
           desc={
             <>
-              我希望合作不是單純按時間收費，而是更接近 <strong>goal-driven 的合作</strong>。固定合作費不是完整顧問費，而是用來覆蓋持續陪跑、顧問時間與策略投入的基本成本，因此會刻意維持在相對低門檻。<strong>成效費則只會在合作前定義的目標真的達成後才收取，代表我也把一部分收入和結果綁在一起</strong>。當然，如果問題複雜度不高，也可以先從單次諮詢開始。
+              我希望不是單純按時間收費，而是更接近 <strong>goal-driven 的合作</strong>。基本合作費不是完整諮詢費用，而是用來覆蓋持續陪跑、顧問時間的基本成本，因此會刻意維持在相對低門檻。<strong>成效費則只會在合作前定義的目標真的達成後才收取，代表我也把一部分收入和結果綁在一起</strong>。如果你還不確定是否適合合作，可以先私訊我聊聊。
             </>
           }
         />
+        <div className="mb-5 border border-[#DDD3C7] bg-[#FFFCF7] p-6 sm:p-8">
+          <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <h3 className="font-serif text-2xl font-semibold leading-snug sm:text-3xl">
+              不是買紙面建議，而是買一個能理解複雜現實的智囊。
+            </h3>
+            <div className="space-y-4 leading-8 text-[#6F6962]">
+              <p>
+                AI 可以陪你想，但它不會真正理解你的背景、承擔你的目標，也不會根據現實世界的複雜情況，持續調整出能在生活中實際行得通的策略。
+              </p>
+            </div>
+          </div>
+        </div>
         <div className="mb-5 border border-[#DDD3C7] bg-[#FFFCF7]/90 p-4 sm:p-5">
           <div className="relative">
             <div className="absolute left-1/2 top-0 hidden h-6 w-px -translate-x-1/2 bg-[#DDD3C7] md:block" aria-hidden="true" />
@@ -935,6 +947,7 @@ function ConsultingPage() {
               <article className="border border-[#DDD3C7] bg-[#F7F4EF] p-4 sm:p-5">
                 <div className="relative space-y-4">
                   <div className="absolute left-4 top-4 bottom-4 w-px bg-[#DDD3C7]" aria-hidden="true" />
+                  <p className="relative z-10 mb-4 text-sm font-semibold text-[#1E1D1A]">正式合作</p>
                   {[pricingLogic[1], pricingLogic[2]].map((item) => (
                     <div key={item.title} className="flex items-start gap-3">
                       <IconMark icon={item.icon} className="relative z-10 h-8 w-8" />
@@ -951,17 +964,17 @@ function ConsultingPage() {
         </div>
         <div className="grid gap-px overflow-hidden border border-[#DDD3C7] bg-[#DDD3C7] md:grid-cols-2 xl:grid-cols-3">
           <PricingCard
-            label="低門檻入口"
-            title="單次諮詢 / 問題診斷"
-            fee="NTD 1,500 起"
-            feeType="單次收費"
-            note="適合有一個明確問題，想先輕量討論的人。可以用來討論 PM 職涯、履歷面試、產品方向等。"
+            label="無壓力入口"
+            title="Coffee Chat"
+            fee="免費"
+            note="適合想轉職 PM、Junior PM、新鮮人，或只是想找人聊聊目前卡住的職涯與方向問題。"
             includes={[
-              "45–60 分鐘諮詢",
-              "會前簡單背景整理",
-              "會後提供重點方向與下一步建議",
+              "45 分鐘線上 / 線下聊聊",
+              "聊聊你的背景、目前遇到的問題或想嘗試的方向",
+              "我會分享初步判斷與意見",
+              "如果之後需要更完整的陪跑，再自然討論",
             ]}
-            success="適合想先試一次合作方式，或目前只需要單點問題診斷的人。"
+            success="這是一場輕量的談話，適合先釐清方向與交換想法；如果需要陪跑服務，可以再視情況討論。"
           />
           <PricingCard
             label="持續陪跑"
@@ -970,7 +983,6 @@ function ConsultingPage() {
             feeType="基本費"
             note="依目標難度、陪跑密度與合作範圍討論。"
             includes={[
-              "免費初談",
               "職涯 / 求職策略計畫",
               "履歷、面試敘事、作品集與投遞策略討論",
               "合作期間持續提問與必要會議",
@@ -985,7 +997,6 @@ function ConsultingPage() {
             feeType="基本費"
             note="依合作範圍、問題複雜度、會議頻率與交付內容討論。公司或團隊案會 case by case 評估。"
             includes={[
-              "免費初談",
               "產品問題診斷",
               "策略計畫與下一步行動建議",
               "每月顧問時間",
@@ -995,25 +1006,17 @@ function ConsultingPage() {
             success="成效費或 milestone fee 依合作前定義的目標討論，例如完成 MVP scope、產品診斷、轉換率改善、作業成本下降、AI workflow 設計等。"
           />
         </div>
-        <div className="mt-6 border border-[#DDD3C7] bg-[#FFFCF7] p-6 sm:p-8">
-          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="-mb-10 mt-6 border-y border-[#DDD3C7] py-7">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <div className="mb-4 flex items-center gap-3">
-                <IconMark icon={HelpCircle} />
-                <h3 className="font-serif text-2xl font-semibold">不知道適合哪一種？可以先聊聊。</h3>
-              </div>
-              <p className="mt-4 max-w-3xl leading-8 text-[#6F6962]">
-                你不需要一開始就決定要選單次諮詢、PM 陪跑或產品諮詢。先簡單說明你的背景、目前卡住的問題，以及想達成的目標，我會協助判斷哪種合作方式比較適合。
-              </p>
-              <p className="mt-4 text-sm leading-7 text-[#1F3A35]">
-                如果我判斷目前不適合合作，也會直接說明，不會硬接。
-              </p>
+              <p className="font-serif text-xl font-semibold">有點卡住，想先找人聊聊？</p>
+              <p className="mt-1 text-sm text-[#6F6962]">不需有壓力，先從免費 Coffee Chat 開始。</p>
             </div>
             <a
               href={facebookUrl}
-              className="inline-flex min-h-12 items-center justify-center gap-2 border border-[#1E1D1A] bg-[#1E1D1A] px-5 text-sm font-semibold text-[#FFFCF7] transition hover:border-[#1F3A35] hover:bg-[#1F3A35]"
+              className="inline-flex min-h-11 items-center justify-center gap-2 border border-[#1E1D1A] px-4 text-sm font-semibold text-[#1E1D1A] transition hover:bg-[#1E1D1A] hover:text-[#FFFCF7]"
             >
-              先聊聊適不適合 <ArrowRight className="h-4 w-4" />
+              預約 Coffee Chat <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>

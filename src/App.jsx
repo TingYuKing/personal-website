@@ -231,7 +231,7 @@ const productProblems = [
   "產品方向不確定，需要釐清問題、受眾與下一步驗證",
   "MVP 或功能範圍太大，需要協助收斂優先級與下一步行動",
   "AI / LLM 應用想落地，但不知道怎麼接到實際工作流、產生具體成效",
-  "side project 或新產品卡在商業模式、GTM 或成長策略",
+  "Side project 或新產品卡在商業模式、GTM 或成長策略",
 ];
 
 const processSteps = [
@@ -979,7 +979,8 @@ function ConsultingPage() {
           <PricingCard
             label="持續陪跑"
             title="PM 陪跑"
-            fee="每月 NTD 2,500 起"
+            fee="NTD 3,000 起"
+            feeSuffix="（一次性）"
             feeType="基本費"
             note="依目標難度、陪跑密度與合作範圍討論。"
             includes={[
@@ -993,9 +994,9 @@ function ConsultingPage() {
           <PricingCard
             label="策略夥伴"
             title="產品諮詢"
-            fee="每月 NTD 8,000 起"
+            fee="面議"
             feeType="基本費"
-            note="依合作範圍、問題複雜度、會議頻率與交付內容討論。公司或團隊案會 case by case 評估。"
+            note="依合作範圍、問題複雜度、交付內容討論。"
             includes={[
               "產品問題診斷",
               "策略計畫與下一步行動建議",
@@ -1163,13 +1164,16 @@ function ServiceBlock({ title, subtitle, noteTitle, desc, problems, steps }) {
   );
 }
 
-function PricingCard({ label, title, fee, feeType, note, includes, success }) {
+function PricingCard({ label, title, fee, feeSuffix, feeType, note, includes, success }) {
   return (
     <article className="h-full bg-[#FFFCF7] p-5 sm:p-6">
       <div className="xl:min-h-[228px]">
         <p className="text-xs font-bold tracking-[0.16em] text-[#7A2E22]">{label}</p>
         <h3 className="mt-3 font-serif text-3xl font-semibold">{title}</h3>
-        <p className="mt-4 font-serif text-2xl text-[#1F3A35]">{fee}</p>
+        <p className="mt-4 font-serif text-2xl text-[#1F3A35]">
+          {fee}
+          {feeSuffix ? <span className="ml-2 font-sans text-sm leading-7 text-[#6F6962]">{feeSuffix}</span> : null}
+        </p>
         {feeType ? (
           <p className="mt-3 inline-flex border border-[#DDD3C7] bg-[#F7F4EF] px-2.5 py-1 text-xs font-semibold tracking-[0.12em] text-[#6F6962]">
             {feeType}

@@ -26,6 +26,7 @@ import {
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const okareerUrl = "https://okareer.com/";
+const okareerLensUrl = "https://okareer-lens.com/";
 const youtubeUrl = "https://www.youtube.com/@diaoyu-96";
 const externalLinks = {
   facebook: "https://www.facebook.com/profile.php?id=61589038263784",
@@ -40,7 +41,7 @@ const navLinks = [
   { label: "關於我", href: "/#about" },
   { label: "文章", href: "/#writing" },
   { label: "諮詢 / 合作", href: "/consulting" },
-  { label: "Okareer", href: okareerUrl },
+  { label: "Okareer", href: "/#okareer" },
   { label: "YouTube", href: youtubeUrl },
 ];
 
@@ -143,11 +144,13 @@ const serviceEntries = [
     title: "使用 Okareer",
     desc: (
       <>
-        <strong>適合正在求職或轉職的人</strong>。Okareer 可以根據你的目標需求，直接推薦市面上最適合你的職缺，並提供可執行的應徵策略。
+        <strong>適合正在求職或轉職的人</strong>。<strong>Okareer</strong> 可以根據你的目標需求，直接推薦市面上最適合你的職缺，並提供可執行的應徵策略。<strong>Okareer Interview Lens</strong> 可以透過面試回答來診斷你與特定職缺之間的差距，以及接下來應該如何補強。
       </>
     ),
     cta: "了解 Okareer",
     href: okareerUrl,
+    secondaryCta: "了解 Okareer Interview Lens",
+    secondaryHref: okareerLensUrl,
     icon: Search,
   },
 ];
@@ -663,16 +666,23 @@ function HomePage() {
               <h3 className="font-serif text-3xl font-semibold">{entry.title}</h3>
               <p className="mt-5 min-h-[168px] leading-8 text-[#6F6962]">{entry.desc}</p>
               <div className="mt-6">
-                <a
-                  href={entry.href}
-                  className={`inline-flex h-12 items-center gap-2 text-sm font-semibold transition ${
-                    entry.featured
-                      ? "border border-[#1E1D1A] bg-[#1E1D1A] px-6 text-[#FFFCF7] hover:border-[#1F3A35] hover:bg-[#1F3A35]"
-                      : "text-[#7A2E22] hover:text-[#1F3A35]"
-                  }`}
-                >
-                  {entry.cta} <ArrowRight className="h-4 w-4" />
-                </a>
+                <div className="flex flex-col items-start gap-3">
+                  <a
+                    href={entry.href}
+                    className={`inline-flex h-12 items-center gap-2 text-sm font-semibold transition ${
+                      entry.featured
+                        ? "border border-[#1E1D1A] bg-[#1E1D1A] px-6 text-[#FFFCF7] hover:border-[#1F3A35] hover:bg-[#1F3A35]"
+                        : "text-[#7A2E22] hover:text-[#1F3A35]"
+                    }`}
+                  >
+                    {entry.cta} <ArrowRight className="h-4 w-4" />
+                  </a>
+                  {entry.secondaryCta ? (
+                    <a href={entry.secondaryHref} className="inline-flex h-12 items-center gap-2 text-sm font-semibold text-[#7A2E22] transition hover:text-[#1F3A35]">
+                      {entry.secondaryCta} <ArrowRight className="h-4 w-4" />
+                    </a>
+                  ) : null}
+                </div>
               </div>
             </article>
           ))}

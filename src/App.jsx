@@ -499,7 +499,7 @@ function HomePage() {
             <Button href="/consulting" variant="secondary">
               查看諮詢方式
             </Button>
-            <Button href={okareerUrl} variant="tertiary">
+            <Button href="/#okareer" variant="tertiary">
               了解 Okareer <ArrowRight className="h-4 w-4" />
             </Button>
           </div>

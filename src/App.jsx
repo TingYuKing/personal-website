@@ -477,15 +477,14 @@ function HomePage() {
             產品・創作・探索・生活
           </div>
 
-          <h1 className="max-w-4xl text-balance font-serif text-[2.45rem] font-semibold leading-[1.16] tracking-[-0.02em] text-[#1E1D1A] sm:text-5xl lg:text-[3.8rem]">
-            <span>追求聰明選擇，</span>
-            <span className="whitespace-nowrap">遠離盲目努力。</span>
+          <h1 className="font-cormorant-garamond-italic max-w-4xl text-balance text-[2.45rem] font-semibold leading-[1.16] tracking-[-0.02em] text-[#1E1D1A] sm:text-5xl lg:text-[3.8rem]">
+            solivagant
           </h1>
 
           <div className="mt-7 max-w-2xl space-y-4 text-base leading-8 text-[#6F6962] sm:text-lg">
             <p>我是鯛魚，過去是一名軟體產品經理，現在是自己的老闆。</p>
             <p>
-              我談一些我關注且重視的主題：職涯發展、產品思維、AI、人生探索。這裡沒有成功學，都是我的親身經驗──踩過的坑、做過的事、還有獲得過一些小成功的方法。
+              我談一些我關注且重視的主題：職涯發展、產品思維、AI、人生探索。這裡沒有成功學，都是我的親身經驗──踩過的坑、做過的事、還有獲得過一些成功的方法。
             </p>
             <p>
               如果你也在找人生方向、想轉職、職涯卡關、做產品沒頭緒，或覺得依照常規人生機械式地活著很無聊，希望這裡能給你多一種思考的角度。

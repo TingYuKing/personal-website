@@ -20,3 +20,8 @@ body {
     Georgia, "Times New Roman", "Noto Serif TC", "Songti TC", "PMingLiU",
     serif;
 }
+
+.font-cormorant-garamond-italic {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
